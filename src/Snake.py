@@ -53,9 +53,6 @@ class Snake:
         new_head = self.get_next_pos(self.snake[0])
         self.snake.insert(0, new_head)
         self.snake.pop()
-        # for i in range(1, len(self.snake)):
-        #     self.snake[i] = self.get_next_pos(self.snake[i])
-        #     self.snake[i][2] = self.snake[i-1][2]
 
     def grow(self):
         tail = self.snake[self.snake.length-1]
@@ -64,6 +61,7 @@ class Snake:
         new_tail[2] = self.snake[self.snake.length-1][2]
         self.snake.append(new_tail)
 
+    @staticmethod
     def flip_direction(self, direction):
         if direction == 0:
             return 2
